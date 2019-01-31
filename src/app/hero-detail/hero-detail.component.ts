@@ -22,14 +22,28 @@ export class HeroDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getHero()
+    //this was the initial code created using angular.io doc
+    // this.getHero()
+    //this was the initial code created using angular.io doc
+
+    // after creating the hero-detail.resolver this code has bene used
+    this._route.data.subscribe(
+      (data: { hero: Hero }) => {
+        this.hero = data.hero;
+      }
+    )
+    // after creating the hero-detail.resolver this code has bene used
   }
 
-  getHero(): void {
-    const id = +this._route.snapshot.paramMap.get('id')
-    this._heroService.getHero(id)
-        .subscribe(hero => this.hero = hero);
-  }
+  // after creating the hero-detail.resolver.service
+  // this code is no longer needed
+  // getHero(): void {
+  //   const id = +this._route.snapshot.paramMap.get('id')
+  //   this._heroService.getHero(id)
+  //       .subscribe(hero => this.hero = hero);
+  // }
+  // after creating the hero-detail.resolver.service
+  // this code is no longer needed
 
   save(): void {
     this._heroService.updateHero(this.hero)

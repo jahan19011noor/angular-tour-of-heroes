@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
 import { HeroService } from '../hero.service';
+import { AdItem } from '../ad-item';
+import { AdService } from '../ad.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +12,12 @@ import { HeroService } from '../hero.service';
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = []
-  constructor(private _heroService: HeroService) { }
+  ads: AdItem[];
+  constructor(private _heroService: HeroService, private adService: AdService) { }
 
   ngOnInit() {
     this.getHeroes();
+    this.ads = this.adService.getAds();
   }
 
   getHeroes(): void {

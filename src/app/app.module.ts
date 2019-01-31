@@ -12,6 +12,11 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { AdBannerComponent } from './ad-banner/ad-banner.component';
+import { AdDirective } from './ad.directive';
+import { AdService } from './ad.service';
+import { HeroJobAdComponent } from './hero-job-ad.component';
+import { HeroProfileComponent } from './hero-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    AdBannerComponent,
+    AdDirective,
+    HeroJobAdComponent,
+    HeroProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +40,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
       InMemoryDataService, { dataEncapsulation: false}
     )
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AdService],
+  bootstrap: [AppComponent],
+  entryComponents: [ HeroJobAdComponent, HeroProfileComponent ],
 })
 export class AppModule { }

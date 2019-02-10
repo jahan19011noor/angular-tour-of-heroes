@@ -1,6 +1,23 @@
 <div *ngIf="hero">
 
-  <h2>{{hero.name | uppercase}} Details</h2>
+  <!-- <h2><span appHighlight highlightColor="yellow">{{hero.name | uppercase}}</span> Details</h2> -->
+
+  <h1>My First Attribute Directive</h1>
+
+<h4>Pick a highlight color</h4>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+
+<p [appHighlight]="color" defaultColor="violet">
+  Highlight me too!
+</p>
+
+
+  <h2><span [appHighlight]="color" defaultColor="violet">{{hero.name | uppercase}}</span> Details</h2>
+  
   <div><span>id: </span>{{hero.id}}</div>
   <div><span>name: </span>{{hero.name}}</div>
 

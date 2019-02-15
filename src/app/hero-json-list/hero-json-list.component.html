@@ -1,0 +1,9 @@
+<h2>Heroes for JSON File</h2>
+
+<div *ngFor="let tear of ('assets/heroes.json' | fetchJson)">
+  {{ tear.name }}
+</div>
+
+<p>Heroes as JSON:
+  {{ 'assets/heroes.json' | fetchJson | json }}
+</p>

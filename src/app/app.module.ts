@@ -18,6 +18,14 @@ import { AdService } from './ad.service';
 import { HeroJobAdComponent } from './hero-job-ad.component';
 import { HeroProfileComponent } from './hero-profile.component';
 import { HighlightDirective } from './highlight.directive';
+import { ExponentialStrengthPipe } from './exponential-strength.pipe';
+import { PowerBosterComponent } from './power-boster/power-boster.component';
+import { PowerBoostCalculatorComponent } from './power-boost-calculator/power-boost-calculator.component';
+import { FlyingHeroesComponent } from './flying-heroes/flying-heroes.component';
+import { FlyingHeroesPipe } from './flying-heroes.pipe';
+import { HeroAsyncMessageComponent } from './hero-async-message/hero-async-message.component';
+import { FetchJsonPipe } from './fetch-json.pipe';
+import { HeroJsonListComponent } from './hero-json-list/hero-json-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +39,15 @@ import { HighlightDirective } from './highlight.directive';
     AdDirective,
     HeroJobAdComponent,
     HeroProfileComponent,
-    HighlightDirective
+    HighlightDirective,
+    ExponentialStrengthPipe,
+    PowerBosterComponent,
+    PowerBoostCalculatorComponent,
+    FlyingHeroesComponent,
+    FlyingHeroesPipe,
+    HeroAsyncMessageComponent,
+    FetchJsonPipe,
+    HeroJsonListComponent
   ],
   imports: [
     BrowserModule,
